@@ -2,9 +2,23 @@
 
 #include "test_framework/generic_test.h"
 using std::vector;
+
 vector<int> PlusOne(vector<int> A) {
-  // TODO - you fill in here.
-  return {};
+  A.back()++;
+
+  // Carry out 1's
+  for (int i = A.size() - 1; i > 0 && A[i] == 10; --i) {
+    A[i] = 0;
+    ++A[i - 1];
+  }
+
+  // Check first element
+  if (A[0] == 10) {
+    A[0] = 0;
+    A.insert(A.begin(), 1);
+  }
+
+  return A;
 }
 
 int main(int argc, char* argv[]) {

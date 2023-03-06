@@ -4,14 +4,30 @@
 #include "test_framework/generic_test.h"
 #include "test_framework/test_failure.h"
 #include "test_framework/timed_executor.h"
+using std::swap;
 using std::vector;
+
 enum class Color { kRed, kWhite, kBlue };
 
-void DutchFlagPartition(int pivot_index, vector<Color>* A_ptr) {
-  // TODO - you fill in here.
+void DutchFlagPartition(int pivot_index, vector<Color> *A_ptr) {
+  vector<Color> &A = *A_ptr;
+  Color pivot = A[pivot_index];
+
+  int l = 0, mid = 0, r = A.size() - 1;
+
+  while (mid <= r) {
+    if (A[mid] < pivot) {
+      swap(A[l++], A[mid++]);
+    } else if (A[mid] > pivot) {
+      swap(A[mid], A[r--]);
+    } else {
+      mid++;
+    }
+  }
+
   return;
 }
-void DutchFlagPartitionWrapper(TimedExecutor& executor, const vector<int>& A,
+void DutchFlagPartitionWrapper(TimedExecutor &executor, const vector<int> &A,
                                int pivot_idx) {
   vector<Color> colors;
   colors.resize(A.size());
@@ -48,7 +64,7 @@ void DutchFlagPartitionWrapper(TimedExecutor& executor, const vector<int>& A,
   }
 }
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
   std::vector<std::string> args{argv + 1, argv + argc};
   std::vector<std::string> param_names{"executor", "A", "pivot_idx"};
   return GenericTestMain(args, "dutch_national_flag.cc",
