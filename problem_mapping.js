@@ -298,7 +298,7 @@ problem_mapping = {
         },
         "5.09 Enumerate all primes to n": {
             "C++: prime_sieve.cc": {
-                "passed": 0,
+                "passed": 24,
                 "total": 24
             },
             "Java: PrimeSieve.java": {
@@ -312,7 +312,7 @@ problem_mapping = {
         },
         "5.10 Permute the elements of an array": {
             "C++: apply_permutation.cc": {
-                "passed": 0,
+                "passed": 101,
                 "total": 101
             },
             "Java: ApplyPermutation.java": {
@@ -326,7 +326,7 @@ problem_mapping = {
         },
         "5.11 Compute the next permutation": {
             "C++: next_permutation.cc": {
-                "passed": 0,
+                "passed": 2001,
                 "total": 2001
             },
             "Java: NextPermutation.java": {
