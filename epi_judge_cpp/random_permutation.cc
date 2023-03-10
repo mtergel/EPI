@@ -1,14 +1,24 @@
 #include <functional>
+#include <numeric>
 #include <vector>
 
 #include "test_framework/generic_test.h"
 #include "test_framework/random_sequence_checker.h"
 #include "test_framework/timed_executor.h"
+
+#define main _main
+#include "offline_sampling.cc"
+#undef main
+
 using std::bind;
 using std::vector;
 vector<int> ComputeRandomPermutation(int n) {
-  // TODO - you fill in here.
-  return {};
+  vector<int> res(n);
+
+  iota(res.begin(), res.end(), 0);
+  RandomSampling(res.size(), &res);
+
+  return res;
 }
 int Factorial(int n) { return n <= 1 ? 1 : n * Factorial(n - 1); }
 

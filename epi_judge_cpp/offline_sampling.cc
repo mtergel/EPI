@@ -1,15 +1,28 @@
 #include <algorithm>
 #include <functional>
 #include <iterator>
+#include <random>
 #include <vector>
 
 #include "test_framework/generic_test.h"
 #include "test_framework/random_sequence_checker.h"
 #include "test_framework/timed_executor.h"
+
 using std::bind;
+using std::default_random_engine;
+using std::random_device;
+using std::swap;
+using std::uniform_int_distribution;
 using std::vector;
+
 void RandomSampling(int k, vector<int>* A_ptr) {
-  // TODO - you fill in here.
+  vector<int>& A = *A_ptr;
+  default_random_engine seed((random_device())());  // Random num generator.
+  for (int i = 0; i < k; ++i) {
+    // Generate a random index in [i, size(A) - 1].
+    swap(A[i], A[uniform_int_distribution<int>{
+                   i, static_cast<int>(A.size()) - 1}(seed)]);
+  }
   return;
 }
 bool RandomSamplingRunner(TimedExecutor& executor, int k, vector<int> A) {

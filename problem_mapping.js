@@ -340,7 +340,7 @@ problem_mapping = {
         },
         "5.12 Sample offline data": {
             "C++: offline_sampling.cc": {
-                "passed": 0,
+                "passed": 8,
                 "total": 8
             },
             "Java: OfflineSampling.java": {
@@ -354,7 +354,7 @@ problem_mapping = {
         },
         "5.13 Sample online data": {
             "C++: online_sampling.cc": {
-                "passed": 0,
+                "passed": 7,
                 "total": 7
             },
             "Java: OnlineSampling.java": {
@@ -368,7 +368,7 @@ problem_mapping = {
         },
         "5.14 Compute a random permutation": {
             "C++: random_permutation.cc": {
-                "passed": 0,
+                "passed": 6,
                 "total": 6
             },
             "Java: RandomPermutation.java": {
@@ -382,7 +382,7 @@ problem_mapping = {
         },
         "5.15 Compute a random subset": {
             "C++: random_subset.cc": {
-                "passed": 0,
+                "passed": 9,
                 "total": 9
             },
             "Java: RandomSubset.java": {
