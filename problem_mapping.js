@@ -396,7 +396,7 @@ problem_mapping = {
         },
         "5.16 Generate nonuniform random numbers": {
             "C++: nonuniform_random_number.cc": {
-                "passed": 0,
+                "passed": 10,
                 "total": 10
             },
             "Java: NonuniformRandomNumber.java": {
@@ -410,7 +410,7 @@ problem_mapping = {
         },
         "5.17 The Sudoku checker problem": {
             "C++: is_valid_sudoku.cc": {
-                "passed": 0,
+                "passed": 745,
                 "total": 745
             },
             "Java: IsValidSudoku.java": {
@@ -424,7 +424,7 @@ problem_mapping = {
         },
         "5.18 Compute the spiral ordering of a 2D array": {
             "C++: spiral_ordering.cc": {
-                "passed": 0,
+                "passed": 51,
                 "total": 51
             },
             "Java: SpiralOrdering.java": {
@@ -438,7 +438,7 @@ problem_mapping = {
         },
         "5.19 Rotate a 2D array": {
             "C++: matrix_rotation.cc": {
-                "passed": 0,
+                "passed": 51,
                 "total": 51
             },
             "Java: MatrixRotation.java": {
