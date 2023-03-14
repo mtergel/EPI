@@ -496,7 +496,7 @@ problem_mapping = {
         },
         "6.02 Base conversion": {
             "C++: convert_base.cc": {
-                "passed": 0,
+                "passed": 20001,
                 "total": 20001
             },
             "Java: ConvertBase.java": {
@@ -510,7 +510,7 @@ problem_mapping = {
         },
         "6.03 Compute the spreadsheet column encoding": {
             "C++: spreadsheet_encoding.cc": {
-                "passed": 0,
+                "passed": 10000,
                 "total": 10000
             },
             "Java: SpreadsheetEncoding.java": {
@@ -524,7 +524,7 @@ problem_mapping = {
         },
         "6.04 Replace and remove": {
             "C++: replace_and_remove.cc": {
-                "passed": 0,
+                "passed": 501,
                 "total": 501
             },
             "Java: ReplaceAndRemove.java": {
@@ -538,7 +538,7 @@ problem_mapping = {
         },
         "6.05 Test palindromicity": {
             "C++: is_string_palindromic_punctuation.cc": {
-                "passed": 0,
+                "passed": 305,
                 "total": 305
             },
             "Java: IsStringPalindromicPunctuation.java": {
@@ -552,7 +552,7 @@ problem_mapping = {
         },
         "6.06 Reverse all the words in a sentence": {
             "C++: reverse_words.cc": {
-                "passed": 0,
+                "passed": 103,
                 "total": 103
             },
             "Java: ReverseWords.java": {
@@ -1980,7 +1980,7 @@ problem_mapping = {
         },
         "15.02 Compute all mnemonics for a phone number": {
             "C++: phone_number_mnemonic.cc": {
-                "passed": 0,
+                "passed": 102,
                 "total": 102
             },
             "Java: PhoneNumberMnemonic.java": {
