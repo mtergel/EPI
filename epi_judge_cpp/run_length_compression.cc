@@ -1,15 +1,40 @@
+#include <cctype>
 #include <string>
 
 #include "test_framework/generic_test.h"
 #include "test_framework/test_failure.h"
+using std::isdigit;
 using std::string;
+using std::to_string;
+
 string Decoding(const string &s) {
-  // TODO - you fill in here.
-  return "";
+  string res;
+
+  int count = 0;
+  for (const char &c : s) {
+    if (isdigit(c)) {
+      count = count * 10 + c - '0';
+    } else {
+      res.append(count, c);
+      count = 0;
+    }
+  }
+
+  return res;
 }
 string Encoding(const string &s) {
-  // TODO - you fill in here.
-  return "";
+  string res;
+
+  for (int i = 0; i < s.size(); i++) {
+    int count = 1;
+    while (i + 1 < s.size() && s[i] == s[i + 1]) {
+      ++count, ++i;
+    }
+
+    res += to_string(count) + s[i];
+  }
+
+  return res;
 }
 void RleTester(const string &encoded, const string &decoded) {
   if (Decoding(encoded) != decoded) {

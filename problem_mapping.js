@@ -566,7 +566,7 @@ problem_mapping = {
         },
         "6.07 The look-and-say problem": {
             "C++: look_and_say.cc": {
-                "passed": 0,
+                "passed": 40,
                 "total": 40
             },
             "Java: LookAndSay.java": {
@@ -580,7 +580,7 @@ problem_mapping = {
         },
         "6.08 Convert from Roman to decimal": {
             "C++: roman_to_integer.cc": {
-                "passed": 0,
+                "passed": 3999,
                 "total": 3999
             },
             "Java: RomanToInteger.java": {
@@ -608,7 +608,7 @@ problem_mapping = {
         },
         "6.10 Write a string sinusoidally": {
             "C++: snake_string.cc": {
-                "passed": 0,
+                "passed": 500,
                 "total": 500
             },
             "Java: SnakeString.java": {
@@ -622,7 +622,7 @@ problem_mapping = {
         },
         "6.11 Implement run-length encoding": {
             "C++: run_length_compression.cc": {
-                "passed": 0,
+                "passed": 200,
                 "total": 200
             },
             "Java: RunLengthCompression.java": {
@@ -636,7 +636,7 @@ problem_mapping = {
         },
         "6.12 Find the first occurrence of a substring": {
             "C++: substring_match.cc": {
-                "passed": 0,
+                "passed": 835,
                 "total": 835
             },
             "Java: SubstringMatch.java": {
