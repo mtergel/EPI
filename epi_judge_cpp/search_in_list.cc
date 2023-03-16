@@ -5,8 +5,12 @@
 using std::shared_ptr;
 
 shared_ptr<ListNode<int>> SearchList(shared_ptr<ListNode<int>> L, int key) {
-  // TODO - you fill in here.
-  return nullptr;
+  shared_ptr<ListNode<int>> curr = L;
+  while (curr && curr->data != key) {
+    curr = curr->next;
+  }
+  // return (curr) ? curr : nullptr;
+  return curr;
 }
 int SearchListWrapper(shared_ptr<ListNode<int>> L, int key) {
   auto result = SearchList(L, key);

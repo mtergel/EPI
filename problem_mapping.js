@@ -652,15 +652,15 @@ problem_mapping = {
     "Chapter 07: Linked Lists": {
         "7.00 Bootcamp: Linked Lists": {
             "C++: delete_from_list.cc": {
-                "passed": 0,
+                "passed": 457,
                 "total": 457
             },
             "C++: insert_in_list.cc": {
-                "passed": 0,
+                "passed": 504,
                 "total": 504
             },
             "C++: search_in_list.cc": {
-                "passed": 0,
+                "passed": 505,
                 "total": 505
             },
             "Java: DeleteFromList.java": {
@@ -690,7 +690,7 @@ problem_mapping = {
         },
         "7.01 Merge two sorted lists": {
             "C++: sorted_lists_merge.cc": {
-                "passed": 0,
+                "passed": 501,
                 "total": 501
             },
             "Java: SortedListsMerge.java": {
@@ -704,7 +704,7 @@ problem_mapping = {
         },
         "7.02 Reverse a single sublist": {
             "C++: reverse_sublist.cc": {
-                "passed": 0,
+                "passed": 210,
                 "total": 210
             },
             "Java: ReverseSublist.java": {
@@ -718,7 +718,7 @@ problem_mapping = {
         },
         "7.03 Test for cyclicity": {
             "C++: is_list_cyclic.cc": {
-                "passed": 0,
+                "passed": 4,
                 "total": 102
             },
             "Java: IsListCyclic.java": {
