@@ -6,10 +6,32 @@
 #include "test_framework/test_failure.h"
 #include "test_framework/timed_executor.h"
 
+#define main _main
+#include "do_terminated_lists_overlap.cc"
+#undef main
+#define main __main
+#include "is_list_cyclic.cc"
+#undef main
+
 shared_ptr<ListNode<int>> OverlappingLists(shared_ptr<ListNode<int>> l0,
                                            shared_ptr<ListNode<int>> l1) {
-  // TODO - you fill in here.
-  return nullptr;
+  // Store the start of cycle if any.
+  auto root0 = HasCycle(l0), root1 = HasCycle(l1);
+
+  if (!root0 && !root1) {
+    // Both lists don't have cycles.
+    return OverlappingNoCycleLists(l0, l1);
+  } else if ((root0 && !root1) || (!root0 && root1)) {
+    // One list has cycle, and one list has no cycle.
+    return nullptr;
+  }
+  // Both lists have cycles.
+  auto temp = root1;
+  do {
+    temp = temp->next;
+  } while (temp != root0 && temp != root1);
+
+  return temp == root0 ? root1 : nullptr;
 }
 void OverlappingListsWrapper(TimedExecutor& executor,
                              shared_ptr<ListNode<int>> l0,

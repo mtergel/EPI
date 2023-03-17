@@ -718,7 +718,7 @@ problem_mapping = {
         },
         "7.03 Test for cyclicity": {
             "C++: is_list_cyclic.cc": {
-                "passed": 4,
+                "passed": 102,
                 "total": 102
             },
             "Java: IsListCyclic.java": {
@@ -732,7 +732,7 @@ problem_mapping = {
         },
         "7.04 Test for overlapping lists---lists are cycle-free": {
             "C++: do_terminated_lists_overlap.cc": {
-                "passed": 0,
+                "passed": 106,
                 "total": 106
             },
             "Java: DoTerminatedListsOverlap.java": {
@@ -746,7 +746,7 @@ problem_mapping = {
         },
         "7.05 Test for overlapping lists---lists may have cycles": {
             "C++: do_lists_overlap.cc": {
-                "passed": 0,
+                "passed": 120,
                 "total": 120
             },
             "Java: DoListsOverlap.java": {
@@ -760,7 +760,7 @@ problem_mapping = {
         },
         "7.06 Delete a node from a singly linked list": {
             "C++: delete_node_from_list.cc": {
-                "passed": 0,
+                "passed": 512,
                 "total": 512
             },
             "Java: DeleteNodeFromList.java": {
@@ -2684,7 +2684,7 @@ problem_mapping = {
         },
         "24.09 Implement list zipping": {
             "C++: zip_list.cc": {
-                "passed": 0,
+                "passed": 51,
                 "total": 51
             },
             "Java: ZipList.java": {

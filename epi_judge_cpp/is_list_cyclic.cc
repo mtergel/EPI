@@ -7,8 +7,28 @@
 using std::shared_ptr;
 
 shared_ptr<ListNode<int>> HasCycle(const shared_ptr<ListNode<int>>& head) {
-  // TODO - you fill in here.
-  return nullptr;
+  shared_ptr<ListNode<int>> fast = head, slow = head;
+
+  while (fast && fast->next) {
+    slow = slow->next;
+    fast = fast->next->next;
+
+    if (slow == fast) {
+      break;
+    }
+  }
+
+  if (fast == nullptr || fast->next == nullptr) {
+    return nullptr;
+  }
+
+  fast = head;
+  while (slow != fast) {
+    slow = slow->next;
+    fast = fast->next;
+  }
+
+  return fast;
 }
 void HasCycleWrapper(TimedExecutor& executor,
                      const shared_ptr<ListNode<int>>& head, int cycle_idx) {
