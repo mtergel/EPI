@@ -13,26 +13,61 @@
 #include "is_list_cyclic.cc"
 #undef main
 
+int GetDistance(shared_ptr<ListNode<int>> start, shared_ptr<ListNode<int>> end);
+
 shared_ptr<ListNode<int>> OverlappingLists(shared_ptr<ListNode<int>> l0,
                                            shared_ptr<ListNode<int>> l1) {
-  // Store the start of cycle if any.
-  auto root0 = HasCycle(l0), root1 = HasCycle(l1);
-
-  if (!root0 && !root1) {
-    // Both lists don't have cycles.
+  // if no cyclic then just check using prev solution
+  auto c0 = HasCycle(l0), c1 = HasCycle(l1);
+  if (c0 == nullptr && c1 == nullptr) {
     return OverlappingNoCycleLists(l0, l1);
-  } else if ((root0 && !root1) || (!root0 && root1)) {
-    // One list has cycle, and one list has no cycle.
+  }
+
+  // if one cyclic and other one is not then no overlap
+  if ((c0 && !c1) || (!c0 && c1)) {
     return nullptr;
   }
-  // Both lists have cycles.
-  auto temp = root1;
+
+  // if both have cyclic, check if cycles are identical
+
+  // check cycle
+  auto temp = c1;
   do {
     temp = temp->next;
-  } while (temp != root0 && temp != root1);
+  } while (temp != c0 && temp != c1);
 
-  return temp == root0 ? root1 : nullptr;
+  // not in the same cycle
+  if (temp != c0) {
+    return nullptr;
+  }
+
+  // l0, l1 in same cycle
+  int l0_len_before = GetDistance(l0, c0);
+  int l1_len_before = GetDistance(l1, c1);
+
+  // move longer to cycle
+  AdvanceListByK(l0_len_before > l1_len_before ? &l0 : &l1,
+                 abs(l0_len_before - l1_len_before));
+
+  while (l0 != l1 && l0 != c0 && l1 != c1) {
+    l0 = l0->next, l1 = l1->next;
+  }
+
+  // l0 == l1, overlap first occurs before cycle starts
+  return l0 == l1 ? l0 : c0;
 }
+
+int GetDistance(shared_ptr<ListNode<int>> start,
+                shared_ptr<ListNode<int>> end) {
+  int dist = 0;
+  while (start != end) {
+    ++dist;
+    start = start->next;
+  }
+
+  return dist;
+}
+
 void OverlappingListsWrapper(TimedExecutor& executor,
                              shared_ptr<ListNode<int>> l0,
                              shared_ptr<ListNode<int>> l1,

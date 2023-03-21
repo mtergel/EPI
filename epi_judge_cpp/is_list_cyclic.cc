@@ -18,11 +18,13 @@ shared_ptr<ListNode<int>> HasCycle(const shared_ptr<ListNode<int>>& head) {
     }
   }
 
-  if (fast == nullptr || fast->next == nullptr) {
+  if (slow != fast) {
     return nullptr;
   }
 
   fast = head;
+
+  // if need to know cycle_length count here
   while (slow != fast) {
     slow = slow->next;
     fast = fast->next;

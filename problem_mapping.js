@@ -704,7 +704,7 @@ problem_mapping = {
         },
         "7.02 Reverse a single sublist": {
             "C++: reverse_sublist.cc": {
-                "passed": 210,
+                "passed": 211,
                 "total": 210
             },
             "Java: ReverseSublist.java": {
@@ -774,7 +774,7 @@ problem_mapping = {
         },
         "7.07 Remove the kth last element from a list": {
             "C++: delete_kth_last_from_list.cc": {
-                "passed": 0,
+                "passed": 306,
                 "total": 306
             },
             "Java: DeleteKthLastFromList.java": {

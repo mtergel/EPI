@@ -4,8 +4,9 @@
 #include "test_framework/generic_test.h"
 shared_ptr<ListNode<int>> MergeTwoSortedLists(shared_ptr<ListNode<int>> L1,
                                               shared_ptr<ListNode<int>> L2) {
-  shared_ptr<ListNode<int>> dummy(new ListNode<int>);
-  auto curr = dummy;
+  // creating new node
+  shared_ptr<ListNode<int>> merged(new ListNode<int>());
+  auto curr = merged;
 
   while (L1 && L2) {
     if (L1->data < L2->data) {
@@ -21,7 +22,7 @@ shared_ptr<ListNode<int>> MergeTwoSortedLists(shared_ptr<ListNode<int>> L1,
 
   curr->next = L1 ? L1 : L2;
 
-  return dummy->next;
+  return merged->next;
 }
 
 int main(int argc, char* argv[]) {

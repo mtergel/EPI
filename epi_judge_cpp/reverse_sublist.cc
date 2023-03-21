@@ -7,31 +7,25 @@ shared_ptr<ListNode<int>> ReverseSublist(shared_ptr<ListNode<int>> L, int start,
     return L;
   }
 
-  // same memory to L?
-  auto dummy = make_shared<ListNode<int>>(ListNode<int>{0, L});
-  auto sublist_head = dummy;
+  shared_ptr<ListNode<int>> dummy =
+      make_shared<ListNode<int>>(ListNode<int>{-1, L});
+  auto prev = dummy;
 
-  // list indexed from 1
+  // go untill before start
   int k = 1;
   while (k++ < start) {
-    sublist_head = sublist_head->next;
+    prev = prev->next;
   }
 
-  // sublist_head right before index start node
-  auto sublist_iter = sublist_head->next;
-  shared_ptr<ListNode<int>> prev = nullptr;
+  auto curr = prev->next;
 
-  // reverse sublist
-  while (start++ < finish + 1) {
-    auto temp = sublist_iter->next;
-    sublist_iter->next = prev;
-    prev = sublist_iter;
-    sublist_iter = temp;
+  // prev -> forw -> curr -> next
+  while (start++ < finish) {
+    auto next = curr->next;
+    curr->next = next->next;
+    next->next = prev->next;
+    prev->next = next;
   }
-
-  // fix sublist edge poiter
-  sublist_head->next->next = sublist_iter;
-  sublist_head->next = prev;
 
   return dummy->next;
 }
