@@ -8,10 +8,33 @@
 #include "test_framework/test_failure.h"
 #include "test_framework/timed_executor.h"
 using std::shared_ptr;
+
+void AppendNode(shared_ptr<ListNode<int>>* node,
+                shared_ptr<ListNode<int>>* tail) {
+  (*tail)->next = *node;
+  *tail = *node;  // Updates tail.
+  *node = (*node)->next;
+}
 shared_ptr<ListNode<int>> ListPivoting(const shared_ptr<ListNode<int>>& l,
+
                                        int x) {
-  // TODO - you fill in here.
-  return nullptr;
+  shared_ptr<ListNode<int>> lessK(new ListNode<int>), equalK(new ListNode<int>),
+      greaterK(new ListNode<int>);
+  shared_ptr<ListNode<int>> less_iter = lessK, equal_iter = equalK,
+                            greater_iter = greaterK;
+
+  shared_ptr<ListNode<int>> curr = l;
+  while (curr) {
+    AppendNode(&curr, curr->data < x    ? &less_iter
+                      : curr->data == x ? &equal_iter
+                                        : &greater_iter);
+  }
+
+  greater_iter->next = nullptr;
+  equal_iter->next = greaterK->next;
+  less_iter->next = equalK->next;
+
+  return lessK->next;
 }
 std::vector<int> ListToVector(const shared_ptr<ListNode<int>>& l) {
   std::vector<int> v;

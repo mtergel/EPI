@@ -788,7 +788,7 @@ problem_mapping = {
         },
         "7.08 Remove duplicates from a sorted list": {
             "C++: remove_duplicates_from_sorted_list.cc": {
-                "passed": 0,
+                "passed": 203,
                 "total": 203
             },
             "Java: RemoveDuplicatesFromSortedList.java": {
@@ -802,7 +802,7 @@ problem_mapping = {
         },
         "7.09 Implement cyclic right shift for singly linked lists": {
             "C++: list_cyclic_right_shift.cc": {
-                "passed": 0,
+                "passed": 507,
                 "total": 507
             },
             "Java: ListCyclicRightShift.java": {
@@ -816,7 +816,7 @@ problem_mapping = {
         },
         "7.10 Implement even-odd merge": {
             "C++: even_odd_list_merge.cc": {
-                "passed": 0,
+                "passed": 1015,
                 "total": 1015
             },
             "Java: EvenOddListMerge.java": {
@@ -830,7 +830,7 @@ problem_mapping = {
         },
         "7.11 Test whether a singly linked list is palindromic": {
             "C++: is_list_palindromic.cc": {
-                "passed": 0,
+                "passed": 203,
                 "total": 203
             },
             "Java: IsListPalindromic.java": {
@@ -844,7 +844,7 @@ problem_mapping = {
         },
         "7.12 Implement list pivoting": {
             "C++: pivot_list.cc": {
-                "passed": 0,
+                "passed": 208,
                 "total": 208
             },
             "Java: PivotList.java": {
@@ -858,7 +858,7 @@ problem_mapping = {
         },
         "7.13 Add list-based integers": {
             "C++: int_as_list_add.cc": {
-                "passed": 0,
+                "passed": 2002,
                 "total": 2002
             },
             "Java: IntAsListAdd.java": {
