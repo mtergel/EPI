@@ -4,10 +4,20 @@
 #include "test_framework/generic_test.h"
 #include "test_framework/test_failure.h"
 #include "test_framework/timed_executor.h"
+using std::swap;
 using std::vector;
 
 void EvenOdd(vector<int>* A_ptr) {
-  // TODO - you fill in here.
+  vector<int>& A = *A_ptr;
+  int even = 0, odd = A.size() - 1;
+
+  while (even < odd) {
+    if (A[even] % 2 == 0) {
+      ++even;
+    } else {
+      swap(A[even], A[odd--]);
+    }
+  }
   return;
 }
 void EvenOddWrapper(TimedExecutor& executor, vector<int> A) {

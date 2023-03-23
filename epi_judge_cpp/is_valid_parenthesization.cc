@@ -1,10 +1,30 @@
+#include <stack>
 #include <string>
 
 #include "test_framework/generic_test.h"
+using std::stack;
 using std::string;
+
 bool IsWellFormed(const string& s) {
-  // TODO - you fill in here.
-  return true;
+  // check parenthesis lol
+  stack<char> stk;
+  for (auto& c : s) {
+    if (c == '(' || c == '{' || c == '[') {
+      stk.emplace(c);
+    } else {
+      if (stk.empty()) {
+        return false;
+      }
+
+      if ((c == ')' && stk.top() != '(') || (c == '}' && stk.top() != '{') ||
+          (c == ']' && stk.top() != '[')) {
+        return false;
+      }
+
+      stk.pop();
+    }
+  }
+  return stk.empty();
 }
 
 int main(int argc, char* argv[]) {

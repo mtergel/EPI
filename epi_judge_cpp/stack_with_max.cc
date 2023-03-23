@@ -1,26 +1,45 @@
+#include <stack>
 #include <stdexcept>
 
 #include "test_framework/generic_test.h"
 #include "test_framework/serialization_traits.h"
 #include "test_framework/test_failure.h"
 using std::length_error;
+using std::stack;
 
 class Stack {
+ private:
+  stack<int> stk;
+  stack<int> max_stk;
+
  public:
-  bool Empty() const {
-    // TODO - you fill in here.
-    return true;
-  }
+  bool Empty() const { return stk.empty(); }
   int Max() const {
-    // TODO - you fill in here.
-    return 0;
+    if (Empty()) {
+      throw length_error("Empty stack");
+    }
+
+    return max_stk.top();
   }
   int Pop() {
-    // TODO - you fill in here.
-    return 0;
+    if (Empty()) {
+      throw length_error("Empty stack");
+    }
+
+    int popped_el = stk.top();
+    if (popped_el == max_stk.top()) {
+      max_stk.pop();
+    }
+
+    stk.pop();
+    return popped_el;
   }
   void Push(int x) {
-    // TODO - you fill in here.
+    if (max_stk.empty() || max_stk.top() <= x) {
+      max_stk.push(x);
+    }
+
+    stk.push(x);
     return;
   }
 };
