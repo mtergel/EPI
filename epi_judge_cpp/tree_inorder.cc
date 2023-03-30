@@ -3,12 +3,32 @@
 
 #include "binary_tree_node.h"
 #include "test_framework/generic_test.h"
+using std::stack;
 using std::unique_ptr;
 using std::vector;
 
 vector<int> InorderTraversal(const unique_ptr<BinaryTreeNode<int>>& tree) {
-  // TODO - you fill in here.
-  return {};
+  vector<int> res;
+  stack<const BinaryTreeNode<int>*> s;
+
+  const auto* curr = tree.get();
+
+  while (curr || !s.empty()) {
+    // go left
+    while (curr) {
+      s.push(curr);
+      curr = curr->left.get();
+    }
+
+    // go right
+    curr = s.top();
+    s.pop();
+
+    res.emplace_back(curr->data);
+    curr = curr->right.get();
+  }
+
+  return res;
 }
 
 int main(int argc, char* argv[]) {

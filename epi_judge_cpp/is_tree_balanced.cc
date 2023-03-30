@@ -1,8 +1,35 @@
+#include <algorithm>
+
 #include "binary_tree_node.h"
 #include "test_framework/generic_test.h"
+
+using std::abs;
+using std::max;
+
+// gets tree's height
+int helper(const unique_ptr<BinaryTreeNode<int>>& node) {
+  if (node == nullptr) {
+    return 0;
+  }
+
+  int leftH = helper(node->left);
+  if (leftH == -1) {
+    return -1;
+  }
+
+  int rightH = helper(node->right);
+  if (rightH == -1) {
+    return -1;
+  }
+
+  if (abs(leftH - rightH) > 1) {
+    return -1;
+  }
+  return max(leftH, rightH) + 1;
+}
+
 bool IsBalanced(const unique_ptr<BinaryTreeNode<int>>& tree) {
-  // TODO - you fill in here.
-  return true;
+  return helper(tree) != -1;
 }
 
 int main(int argc, char* argv[]) {

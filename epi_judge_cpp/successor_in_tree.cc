@@ -4,8 +4,27 @@
 
 BinaryTreeNode<int>* FindSuccessor(
     const unique_ptr<BinaryTreeNode<int>>& node) {
-  // TODO - you fill in here.
-  return nullptr;
+  if (node == nullptr) {
+    return nullptr;
+  }
+
+  auto* curr = node.get();
+  if (node->right) {
+    curr = curr->right.get();
+    while (curr->left) {
+      curr = curr->left.get();
+    }
+
+    return curr;
+  }
+
+  // find closest ancestor
+  // whose left subtree contains curr
+  while (curr->parent && curr->parent->right.get() == curr) {
+    curr = curr->parent;
+  }
+
+  return curr->parent;
 }
 int FindSuccessorWrapper(const unique_ptr<BinaryTreeNode<int>>& tree,
                          int node_idx) {

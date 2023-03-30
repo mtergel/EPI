@@ -6,11 +6,32 @@
 #include "test_framework/test_failure.h"
 #include "test_framework/timed_executor.h"
 using std::unique_ptr;
+
+BinaryTreeNode<int>* helper(const unique_ptr<BinaryTreeNode<int>>& root,
+                            const unique_ptr<BinaryTreeNode<int>>& p,
+                            const unique_ptr<BinaryTreeNode<int>>& q) {
+  if (root == nullptr) {
+    return nullptr;
+  }
+
+  if (root == p || root == q) {
+    return root.get();
+  }
+
+  auto p1 = helper(root->left, p, q);
+  auto p2 = helper(root->right, p, q);
+
+  if (p1 && p2) {
+    return root.get();
+  }
+
+  return p1 ? p1 : p2;
+}
+
 BinaryTreeNode<int>* Lca(const unique_ptr<BinaryTreeNode<int>>& tree,
                          const unique_ptr<BinaryTreeNode<int>>& node0,
                          const unique_ptr<BinaryTreeNode<int>>& node1) {
-  // TODO - you fill in here.
-  return nullptr;
+  return helper(tree, node0, node1);  // Recursive
 }
 int LcaWrapper(TimedExecutor& executor,
                const unique_ptr<BinaryTreeNode<int>>& tree, int key0,

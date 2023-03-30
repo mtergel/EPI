@@ -1058,7 +1058,7 @@ problem_mapping = {
         },
         "9.05 Sum the root-to-leaf paths in a binary tree": {
             "C++: sum_root_to_leaf.cc": {
-                "passed": 0,
+                "passed": 3849,
                 "total": 3849
             },
             "Java: SumRootToLeaf.java": {
@@ -1072,7 +1072,7 @@ problem_mapping = {
         },
         "9.06 Find a root to leaf path with specified sum": {
             "C++: path_sum.cc": {
-                "passed": 0,
+                "passed": 7690,
                 "total": 7690
             },
             "Java: PathSum.java": {
@@ -1086,7 +1086,7 @@ problem_mapping = {
         },
         "9.07 Implement an inorder traversal without recursion": {
             "C++: tree_inorder.cc": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             },
             "Java: TreeInorder.java": {
@@ -1100,7 +1100,7 @@ problem_mapping = {
         },
         "9.08 Compute the kth node in an inorder traversal": {
             "C++: kth_node_in_tree.cc": {
-                "passed": 0,
+                "passed": 3851,
                 "total": 3851
             },
             "Java: KthNodeInTree.java": {
@@ -1114,7 +1114,7 @@ problem_mapping = {
         },
         "9.09 Compute the successor": {
             "C++: successor_in_tree.cc": {
-                "passed": 0,
+                "passed": 948,
                 "total": 948
             },
             "Java: SuccessorInTree.java": {
@@ -1128,7 +1128,7 @@ problem_mapping = {
         },
         "9.10 Implement an inorder traversal with constant space": {
             "C++: tree_with_parent_inorder.cc": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             },
             "Java: TreeWithParentInorder.java": {
@@ -1142,7 +1142,7 @@ problem_mapping = {
         },
         "9.11 Reconstruct a binary tree from traversal data": {
             "C++: tree_from_preorder_inorder.cc": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             },
             "Java: TreeFromPreorderInorder.java": {

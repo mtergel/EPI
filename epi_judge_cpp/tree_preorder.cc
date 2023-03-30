@@ -2,11 +2,26 @@
 
 #include "binary_tree_node.h"
 #include "test_framework/generic_test.h"
+using std::stack;
 using std::vector;
 
 vector<int> PreorderTraversal(const unique_ptr<BinaryTreeNode<int>>& tree) {
-  // TODO - you fill in here.
-  return {};
+  vector<int> res;
+  stack<const BinaryTreeNode<int>*> stk;
+  stk.emplace(tree.get());
+
+  while (!stk.empty()) {
+    auto curr = stk.top();
+    stk.pop();
+
+    if (curr != nullptr) {
+      res.emplace_back(curr->data);
+      stk.emplace(curr->right.get());
+      stk.emplace(curr->left.get());
+    }
+  }
+
+  return res;
 }
 
 int main(int argc, char* argv[]) {
