@@ -594,7 +594,7 @@ problem_mapping = {
         },
         "6.09 Compute all valid IP addresses": {
             "C++: valid_ip_addresses.cc": {
-                "passed": 0,
+                "passed": 10008,
                 "total": 10008
             },
             "Java: ValidIpAddresses.java": {
@@ -704,7 +704,7 @@ problem_mapping = {
         },
         "7.02 Reverse a single sublist": {
             "C++: reverse_sublist.cc": {
-                "passed": 211,
+                "passed": 210,
                 "total": 210
             },
             "Java: ReverseSublist.java": {
@@ -930,7 +930,7 @@ problem_mapping = {
         },
         "8.05 Compute buildings with a sunset view": {
             "C++: sunset_view.cc": {
-                "passed": 0,
+                "passed": 101,
                 "total": 101
             },
             "Java: SunsetView.java": {
@@ -944,7 +944,7 @@ problem_mapping = {
         },
         "8.06 Compute binary tree nodes in order of increasing depth": {
             "C++: tree_level_order.cc": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             },
             "Java: TreeLevelOrder.java": {
@@ -986,7 +986,7 @@ problem_mapping = {
         },
         "8.09 Implement a queue with max API": {
             "C++: queue_with_max.cc": {
-                "passed": 0,
+                "passed": 201,
                 "total": 201
             },
             "Java: QueueWithMax.java": {
@@ -1002,7 +1002,7 @@ problem_mapping = {
     "Chapter 09: Binary Trees": {
         "9.01 Test if a binary tree is height-balanced": {
             "C++: is_tree_balanced.cc": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             },
             "Java: IsTreeBalanced.java": {
@@ -1016,7 +1016,7 @@ problem_mapping = {
         },
         "9.02 Test if a binary tree is symmetric": {
             "C++: is_tree_symmetric.cc": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             },
             "Java: IsTreeSymmetric.java": {
@@ -1030,7 +1030,7 @@ problem_mapping = {
         },
         "9.03 Compute the lowest common ancestor in a binary tree": {
             "C++: lowest_common_ancestor.cc": {
-                "passed": 0,
+                "passed": 948,
                 "total": 948
             },
             "Java: LowestCommonAncestor.java": {
@@ -1044,7 +1044,7 @@ problem_mapping = {
         },
         "9.04 Compute the LCA when nodes have parent pointers": {
             "C++: lowest_common_ancestor_with_parent.cc": {
-                "passed": 0,
+                "passed": 948,
                 "total": 948
             },
             "Java: LowestCommonAncestorWithParent.java": {

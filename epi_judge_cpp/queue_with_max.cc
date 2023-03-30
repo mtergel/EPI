@@ -1,25 +1,44 @@
+#include <algorithm>
 #include <stdexcept>
 
 #include "test_framework/generic_test.h"
 #include "test_framework/serialization_traits.h"
 #include "test_framework/test_failure.h"
+
+#define main _main
+#define ProgramConfig _ProgramConfig
+#include "stack_with_max.cc"
+#undef main
+#undef ProgramConfig
+
 using std::length_error;
+using std::max;
 
 class QueueWithMax {
  public:
-  void Enqueue(int x) {
-    // TODO - you fill in here.
-    return;
-  }
+  void Enqueue(int x) { enqueue_.Push(x); }
+
   int Dequeue() {
-    // TODO - you fill in here.
-    return 0;
+    if (dequeue_.Empty()) {
+      while (!enqueue_.Empty()) {
+        dequeue_.Push(enqueue_.Pop());
+      }
+    }
+    return dequeue_.Pop();
   }
+
   int Max() const {
-    // TODO - you fill in here.
-    return 0;
+    if (!enqueue_.Empty()) {
+      return dequeue_.Empty() ? enqueue_.Max()
+                              : max(enqueue_.Max(), dequeue_.Max());
+    }
+    return dequeue_.Max();
   }
+
+ private:
+  Stack enqueue_, dequeue_;
 };
+
 struct QueueOp {
   enum class Operation { kConstruct, kDequeue, kEnqueue, kMax } op;
   int argument;
@@ -76,9 +95,13 @@ void QueueTester(const std::vector<QueueOp>& ops) {
   }
 }
 
+// clang-format off
+
+
 int main(int argc, char* argv[]) {
-  std::vector<std::string> args{argv + 1, argv + argc};
-  std::vector<std::string> param_names{"ops"};
-  return GenericTestMain(args, "queue_with_max.cc", "queue_with_max.tsv",
-                         &QueueTester, DefaultComparator{}, param_names);
+  std::vector<std::string> args {argv + 1, argv + argc};
+  std::vector<std::string> param_names {"ops"};
+  return GenericTestMain(args, "queue_with_max.cc", "queue_with_max.tsv", &QueueTester,
+                         DefaultComparator{}, param_names);
 }
+// clang-format on
