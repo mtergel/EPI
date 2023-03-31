@@ -15,8 +15,25 @@ struct BinaryTreeNode {
   explicit BinaryTreeNode(T data) : data(data){};
 };
 
+void helper(BinaryTreeNode<int>* node) {
+  auto iter = node;
+  while (iter) {
+    iter->left->next = iter->right.get();
+
+    if (iter->next) {
+      iter->right->next = iter->next->left.get();
+    }
+
+    iter = iter->next;
+  }
+}
+
 void ConstructRightSibling(BinaryTreeNode<int>* tree) {
-  // TODO - you fill in here.
+  auto left_start = tree;
+  while (left_start && left_start->left) {
+    helper(left_start);
+    left_start = left_start->left.get();
+  }
   return;
 }
 namespace test_framework {

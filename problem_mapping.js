@@ -1156,7 +1156,7 @@ problem_mapping = {
         },
         "9.12 Reconstruct a binary tree from a preorder traversal with markers": {
             "C++: tree_from_preorder_with_null.cc": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             },
             "Java: TreeFromPreorderWithNull.java": {
@@ -1170,7 +1170,7 @@ problem_mapping = {
         },
         "9.13 Compute the leaves of a binary tree": {
             "C++: tree_connect_leaves.cc": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             },
             "Java: TreeConnectLeaves.java": {
@@ -1184,7 +1184,7 @@ problem_mapping = {
         },
         "9.14 Compute the exterior of a binary tree": {
             "C++: tree_exterior.cc": {
-                "passed": 0,
+                "passed": 3852,
                 "total": 3852
             },
             "Java: TreeExterior.java": {
@@ -1198,7 +1198,7 @@ problem_mapping = {
         },
         "9.15 Compute the right sibling tree": {
             "C++: tree_right_sibling.cc": {
-                "passed": 0,
+                "passed": 10,
                 "total": 10
             },
             "Java: TreeRightSibling.java": {
