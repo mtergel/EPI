@@ -1256,7 +1256,7 @@ problem_mapping = {
         },
         "10.04 Compute the k closest stars": {
             "C++: k_closest_stars.cc": {
-                "passed": 0,
+                "passed": 51,
                 "total": 51
             },
             "Java: KClosestStars.java": {
@@ -1270,7 +1270,7 @@ problem_mapping = {
         },
         "10.05 Compute the median of online data": {
             "C++: online_median.cc": {
-                "passed": 0,
+                "passed": 55,
                 "total": 55
             },
             "Java: OnlineMedian.java": {

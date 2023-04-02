@@ -1,10 +1,12 @@
 #include <algorithm>
 #include <cmath>
+#include <queue>
 #include <vector>
 
 #include "test_framework/generic_test.h"
 #include "test_framework/serialization_traits.h"
 #include "test_framework/test_utils.h"
+using std::priority_queue;
 using std::vector;
 
 struct Star {
@@ -20,8 +22,23 @@ struct Star {
 vector<Star> FindClosestKStars(vector<Star>::const_iterator stars_begin,
                                const vector<Star>::const_iterator& stars_end,
                                int k) {
-  // TODO - you fill in here.
-  return {};
+  // O(k) space max_heap
+  priority_queue<Star> pq;
+  vector<Star> res;
+
+  while (stars_begin != stars_end) {
+    pq.emplace(*stars_begin++);
+    if (pq.size() == k + 1) {
+      pq.pop();
+    }
+  }
+
+  while (!pq.empty()) {
+    res.emplace_back(pq.top());
+    pq.pop();
+  }
+
+  return res;
 }
 
 namespace test_framework {
