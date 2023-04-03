@@ -1242,7 +1242,7 @@ problem_mapping = {
         },
         "10.03 Sort an almost-sorted array": {
             "C++: sort_almost_sorted_array.cc": {
-                "passed": 0,
+                "passed": 101,
                 "total": 101
             },
             "Java: SortAlmostSortedArray.java": {
@@ -1284,7 +1284,7 @@ problem_mapping = {
         },
         "10.06 Compute the k largest elements in a max-heap": {
             "C++: k_largest_in_heap.cc": {
-                "passed": 0,
+                "passed": 102,
                 "total": 102
             },
             "Java: KLargestInHeap.java": {

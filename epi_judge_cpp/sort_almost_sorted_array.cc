@@ -1,12 +1,33 @@
+#include <functional>
+#include <queue>
 #include <vector>
 
 #include "test_framework/generic_test.h"
+using std::greater;
+using std::priority_queue;
 using std::vector;
+
 vector<int> SortApproximatelySortedData(
     vector<int>::const_iterator sequence_begin,
     const vector<int>::const_iterator& sequence_end, int k) {
-  // TODO - you fill in here.
-  return {};
+  vector<int> res;
+  priority_queue<int, vector<int>, greater<int>> pq;
+
+  while (sequence_begin != sequence_end) {
+    pq.emplace(*sequence_begin++);
+
+    if (pq.size() == k) {
+      res.emplace_back(pq.top());
+      pq.pop();
+    }
+  }
+
+  while (!pq.empty()) {
+    res.emplace_back(pq.top());
+    pq.pop();
+  }
+
+  return res;
 }
 vector<int> SortApproximatelySortedDataWrapper(const vector<int>& sequence,
                                                int k) {

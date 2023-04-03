@@ -9,20 +9,15 @@ using std::vector;
 
 vector<double> OnlineMedian(vector<int>::const_iterator sequence_begin,
                             const vector<int>::const_iterator& sequence_end) {
-  // min_heap stores the larger half seen so far.
-  priority_queue<int, vector<int>, greater<>> min_heap;
-  // max_heap stores the smaller half seen so far.
-  priority_queue<int> max_heap;
   vector<double> res;
+  priority_queue<int> max_heap;
+  priority_queue<int, vector<int>, greater<int>> min_heap;
 
   while (sequence_begin != sequence_end) {
     min_heap.emplace(*sequence_begin++);
     max_heap.emplace(min_heap.top());
     min_heap.pop();
 
-    // Ensure min_heap and max_heap have equal number of elements if
-    // an even number of elements is read; otherwise, min_heap must have
-    // one more element than max_heap.
     if (max_heap.size() > min_heap.size()) {
       min_heap.emplace(max_heap.top());
       max_heap.pop();
