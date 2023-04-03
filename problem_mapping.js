@@ -1300,7 +1300,7 @@ problem_mapping = {
     "Chapter 11: Searching": {
         "11.01 Search a sorted array for first occurrence of k": {
             "C++: search_first_key.cc": {
-                "passed": 0,
+                "passed": 314,
                 "total": 314
             },
             "Java: SearchFirstKey.java": {
@@ -1314,7 +1314,7 @@ problem_mapping = {
         },
         "11.02 Search a sorted array for entry equal to its index": {
             "C++: search_entry_equal_to_index.cc": {
-                "passed": 0,
+                "passed": 501,
                 "total": 501
             },
             "Java: SearchEntryEqualToIndex.java": {
@@ -1328,7 +1328,7 @@ problem_mapping = {
         },
         "11.03 Search a cyclically sorted array": {
             "C++: search_shifted_sorted_array.cc": {
-                "passed": 0,
+                "passed": 307,
                 "total": 307
             },
             "Java: SearchShiftedSortedArray.java": {
@@ -1342,7 +1342,7 @@ problem_mapping = {
         },
         "11.04 Compute the integer square root": {
             "C++: int_square_root.cc": {
-                "passed": 0,
+                "passed": 2000,
                 "total": 2000
             },
             "Java: IntSquareRoot.java": {
@@ -1356,7 +1356,7 @@ problem_mapping = {
         },
         "11.05 Compute the real square root": {
             "C++: real_square_root.cc": {
-                "passed": 0,
+                "passed": 11003,
                 "total": 11003
             },
             "Java: RealSquareRoot.java": {

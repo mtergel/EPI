@@ -4,8 +4,22 @@
 using std::vector;
 
 int SearchSmallest(const vector<int>& A) {
-  // TODO - you fill in here.
-  return 0;
+  if (A.front() < A.back()) {
+    return 0;
+  }
+
+  int l = 0, r = A.size() - 1;
+  while (l < r) {
+    int mid = l + (r - l) / 2;
+
+    if (A[mid] > A[r]) {
+      l = mid + 1;
+    } else {
+      r = mid;
+    }
+  }
+
+  return l;
 }
 
 int main(int argc, char* argv[]) {
