@@ -1370,7 +1370,7 @@ problem_mapping = {
         },
         "11.06 Search in a 2D sorted array": {
             "C++: search_row_col_sorted_matrix.cc": {
-                "passed": 0,
+                "passed": 194,
                 "total": 194
             },
             "Java: SearchRowColSortedMatrix.java": {
@@ -1384,7 +1384,7 @@ problem_mapping = {
         },
         "11.07 Find the min and max simultaneously": {
             "C++: search_for_min_max_in_array.cc": {
-                "passed": 0,
+                "passed": 501,
                 "total": 501
             },
             "Java: SearchForMinMaxInArray.java": {
@@ -1398,7 +1398,7 @@ problem_mapping = {
         },
         "11.08 Find the kth largest element": {
             "C++: kth_largest_in_array.cc": {
-                "passed": 0,
+                "passed": 503,
                 "total": 503
             },
             "Java: KthLargestInArray.java": {
@@ -1412,7 +1412,7 @@ problem_mapping = {
         },
         "11.09 Find the missing IP address": {
             "C++: absent_value_array.cc": {
-                "passed": 0,
+                "passed": 100,
                 "total": 100
             },
             "Java: AbsentValueArray.java": {
