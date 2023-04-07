@@ -1442,7 +1442,7 @@ problem_mapping = {
     "Chapter 12: Hash Tables": {
         "12.00 Bootcamp: Hash Tables": {
             "C++: anagrams.cc": {
-                "passed": 0,
+                "passed": 9,
                 "total": 9
             },
             "Java: Anagrams.java": {
@@ -1456,7 +1456,7 @@ problem_mapping = {
         },
         "12.01 Test for palindromic permutations": {
             "C++: is_string_permutable_to_palindrome.cc": {
-                "passed": 0,
+                "passed": 305,
                 "total": 305
             },
             "Java: IsStringPermutableToPalindrome.java": {
@@ -1470,7 +1470,7 @@ problem_mapping = {
         },
         "12.02 Is an anonymous letter constructible?": {
             "C++: is_anonymous_letter_constructible.cc": {
-                "passed": 0,
+                "passed": 212,
                 "total": 212
             },
             "Java: IsAnonymousLetterConstructible.java": {
@@ -1484,7 +1484,7 @@ problem_mapping = {
         },
         "12.03 Implement an ISBN cache": {
             "C++: lru_cache.cc": {
-                "passed": 0,
+                "passed": 101,
                 "total": 101
             },
             "Java: LruCache.java": {

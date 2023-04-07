@@ -1,25 +1,71 @@
+#include <list>
+#include <unordered_map>
 #include <vector>
 
 #include "test_framework/generic_test.h"
 #include "test_framework/serialization_traits.h"
 #include "test_framework/test_failure.h"
 
+using std::list;
+using std::pair;
+using std::unordered_map;
+
 class LruCache {
+ private:
+  using Table = unordered_map<int, pair<list<int>::iterator, int>>;
+
+  // Forces this key-value pair to move to the front.
+  void MoveToFront(int isbn, const Table::iterator& it) {
+    lru_queue_.erase(it->second.first);
+    lru_queue_.emplace_front(isbn);
+    it->second.first = begin(lru_queue_);
+  }
+
+  int capacity_;
+  Table isbn_price_table_;
+  list<int> lru_queue_;  // front recently, least recently
+
  public:
-  LruCache(size_t capacity) {}
+  LruCache(size_t capacity) { capacity_ = capacity; }
   int Lookup(int isbn) {
-    // TODO - you fill in here.
-    return 0;
+    auto it = isbn_price_table_.find(isbn);
+    if (it == isbn_price_table_.end()) {
+      return -1;
+    } else {
+      int price = it->second.second;
+      MoveToFront(isbn, it);
+
+      return price;
+    }
   }
   void Insert(int isbn, int price) {
-    // TODO - you fill in here.
+    auto it = isbn_price_table_.find(isbn);
+    if (it != isbn_price_table_.end()) {
+      MoveToFront(isbn, it);
+    } else {
+      if (isbn_price_table_.size() == capacity_) {
+        isbn_price_table_.erase(lru_queue_.back());
+        lru_queue_.pop_back();
+      }
+
+      lru_queue_.emplace_front(isbn);
+      isbn_price_table_[isbn] = {lru_queue_.begin(), price};
+    }
+
     return;
   }
   bool Erase(int isbn) {
-    // TODO - you fill in here.
-    return true;
+    auto it = isbn_price_table_.find(isbn);
+    if (it == isbn_price_table_.end()) {
+      return false;
+    } else {
+      lru_queue_.erase(it->second.first);
+      isbn_price_table_.erase(it);
+      return true;
+    }
   }
 };
+
 struct Op {
   std::string code;
   int arg1;
