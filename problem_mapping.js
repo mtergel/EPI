@@ -1498,7 +1498,7 @@ problem_mapping = {
         },
         "12.04 Compute the LCA, optimizing for close ancestors": {
             "C++: lowest_common_ancestor_close_ancestor.cc": {
-                "passed": 0,
+                "passed": 948,
                 "total": 948
             },
             "Java: LowestCommonAncestorCloseAncestor.java": {
@@ -1512,7 +1512,7 @@ problem_mapping = {
         },
         "12.05 Find the nearest repeated entries in an array": {
             "C++: nearest_repeated_entries.cc": {
-                "passed": 0,
+                "passed": 505,
                 "total": 505
             },
             "Java: NearestRepeatedEntries.java": {
@@ -1526,7 +1526,7 @@ problem_mapping = {
         },
         "12.06 Find the smallest subarray covering all values": {
             "C++: smallest_subarray_covering_set.cc": {
-                "passed": 0,
+                "passed": 904,
                 "total": 904
             },
             "Java: SmallestSubarrayCoveringSet.java": {

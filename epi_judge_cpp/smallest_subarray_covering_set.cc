@@ -1,4 +1,5 @@
 #include <string>
+#include <unordered_map>
 #include <unordered_set>
 #include <vector>
 
@@ -15,8 +16,35 @@ struct Subarray {
 
 Subarray FindSmallestSubarrayCoveringSet(
     const vector<string> &paragraph, const unordered_set<string> &keywords) {
-  // TODO - you fill in here.
-  return {0, 0};
+  Subarray res = Subarray{-1, -1};
+  std::unordered_map<string, int> m;
+
+  for (const string &k : keywords) {
+    ++m[k];
+  }
+
+  int total = keywords.size();
+  for (int l = 0, r = 0; r < paragraph.size(); ++r) {
+    if (keywords.count(paragraph[r]) && --m[paragraph[r]] >= 0) {
+      --total;
+    }
+
+    // keep advancing left untill m does not
+    // contain all keywords
+    while (total == 0) {
+      if ((res.start == -1 && res.end == -1) || r - l < res.end - res.start) {
+        res = {l, r};
+      }
+
+      if (keywords.count(paragraph[l]) && ++m[paragraph[l]] > 0) {
+        ++total;
+      }
+
+      ++l;
+    }
+  }
+
+  return res;
 }
 int FindSmallestSubarrayCoveringSetWrapper(
     TimedExecutor &executor, const vector<string> &paragraph,
