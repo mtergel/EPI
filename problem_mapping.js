@@ -916,7 +916,7 @@ problem_mapping = {
         },
         "8.04 Normalize pathnames": {
             "C++: directory_path_normalization.cc": {
-                "passed": 255,
+                "passed": 0,
                 "total": 255
             },
             "Java: DirectoryPathNormalization.java": {
@@ -1540,7 +1540,7 @@ problem_mapping = {
         },
         "12.07 Find smallest subarray sequentially covering all values": {
             "C++: smallest_subarray_covering_all_values.cc": {
-                "passed": 0,
+                "passed": 629,
                 "total": 629
             },
             "Java: SmallestSubarrayCoveringAllValues.java": {
@@ -1568,7 +1568,7 @@ problem_mapping = {
         },
         "12.09 Find the length of a longest contained interval": {
             "C++: longest_contained_interval.cc": {
-                "passed": 0,
+                "passed": 203,
                 "total": 203
             },
             "Java: LongestContainedInterval.java": {
