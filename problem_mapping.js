@@ -1554,7 +1554,7 @@ problem_mapping = {
         },
         "12.08 Find the longest subarray with distinct entries": {
             "C++: longest_subarray_with_distinct_values.cc": {
-                "passed": 0,
+                "passed": 987,
                 "total": 987
             },
             "Java: LongestSubarrayWithDistinctValues.java": {
@@ -1582,7 +1582,7 @@ problem_mapping = {
         },
         "12.10 Compute all string decompositions": {
             "C++: string_decompositions_into_dictionary_words.cc": {
-                "passed": 0,
+                "passed": 171,
                 "total": 171
             },
             "Java: StringDecompositionsIntoDictionaryWords.java": {
@@ -1596,7 +1596,7 @@ problem_mapping = {
         },
         "12.11 Test the Collatz conjecture": {
             "C++: collatz_checker.cc": {
-                "passed": 0,
+                "passed": 7,
                 "total": 7
             },
             "Java: CollatzChecker.java": {
@@ -1612,7 +1612,7 @@ problem_mapping = {
     "Chapter 13: Sorting": {
         "13.01 Compute the intersection of two sorted arrays": {
             "C++: intersect_sorted_arrays.cc": {
-                "passed": 0,
+                "passed": 202,
                 "total": 202
             },
             "Java: IntersectSortedArrays.java": {
@@ -1626,7 +1626,7 @@ problem_mapping = {
         },
         "13.02 Merge two sorted arrays": {
             "C++: two_sorted_arrays_merge.cc": {
-                "passed": 0,
+                "passed": 201,
                 "total": 201
             },
             "Java: TwoSortedArraysMerge.java": {
@@ -1654,7 +1654,7 @@ problem_mapping = {
         },
         "13.04 Remove first-name duplicates": {
             "C++: remove_duplicates.cc": {
-                "passed": 0,
+                "passed": 202,
                 "total": 202
             },
             "Java: RemoveDuplicates.java": {
@@ -1682,7 +1682,7 @@ problem_mapping = {
         },
         "13.06 Render a calendar": {
             "C++: calendar_rendering.cc": {
-                "passed": 0,
+                "passed": 97,
                 "total": 97
             },
             "Java: CalendarRendering.java": {

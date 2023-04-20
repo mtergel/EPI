@@ -5,7 +5,9 @@
 
 #include "test_framework/generic_test.h"
 #include "test_framework/serialization_traits.h"
+using std::sort;
 using std::string;
+using std::unique;
 using std::vector;
 
 struct Name {
@@ -14,10 +16,15 @@ struct Name {
                                          : last_name < that.last_name;
   }
 
+  bool operator==(const Name& that) const {
+    return first_name == that.first_name;
+  }
+
   string first_name, last_name;
 };
 void EliminateDuplicate(vector<Name>* names) {
-  // TODO - you fill in here.
+  sort(names->begin(), names->end());
+  names->erase(unique(names->begin(), names->end()), names->end());
   return;
 }
 

@@ -22,7 +22,7 @@ int LongestSubarrayWithDistinctEntries(const vector<int>& A) {
     if (!dup_idx.second) {
       // is A[r] in longest current subarray?
       if (dup_idx.first->second >= l) {
-        res = std::max(res, r - l + 1);
+        res = std::max(res, r - l);
         l = dup_idx.first->second + 1;
       }
     }

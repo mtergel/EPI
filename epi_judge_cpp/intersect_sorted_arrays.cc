@@ -5,8 +5,28 @@ using std::vector;
 
 vector<int> IntersectTwoSortedArrays(const vector<int>& A,
                                      const vector<int>& B) {
-  // TODO - you fill in here.
-  return {};
+  vector<int> res;
+
+  int i = 0, j = 0;
+
+  while (i < A.size() && j < B.size()) {
+    if (A[i] == B[j] && (i == 0 || A[i] != A[i - 1])) {
+      res.emplace_back(A[i]);
+      ++i, ++j;
+    } else if (A[i] < B[j]) {
+      ++i;
+    } else {
+      ++j;
+    }
+  }
+  // for (int i = 0; i < A.size(); ++i) {
+  //   if ((i == 0 || A[i] != A[i - 1]) &&
+  //       binary_search(B.cbegin(), B.cend(), A[i])) {
+  //     res.emplace_back(A[i]);
+  //   }
+  // }
+
+  return res;
 }
 
 int main(int argc, char* argv[]) {

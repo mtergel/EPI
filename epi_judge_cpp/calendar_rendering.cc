@@ -1,3 +1,5 @@
+#include <algorithm>
+#include <map>
 #include <vector>
 
 #include "test_framework/generic_test.h"
@@ -7,9 +9,37 @@ using std::vector;
 struct Event {
   int start, finish;
 };
+
+struct Endpoint {
+  bool operator<(const Endpoint& that) const {
+    return time != that.time ? time < that.time : (isStart && !that.isStart);
+  }
+
+  int time;
+  bool isStart;
+};
+
 int FindMaxSimultaneousEvents(const vector<Event>& A) {
-  // TODO - you fill in here.
-  return 0;
+  vector<Endpoint> E;
+  for (const Event& event : A) {
+    E.emplace_back(Endpoint{event.start, true});
+    E.emplace_back(Endpoint{event.finish, false});
+  }
+
+  sort(E.begin(), E.end());
+  int res = 0, count = 0;
+
+  for (const Endpoint& endpoint : E) {
+    if (endpoint.isStart) {
+      ++count;
+
+      res = std::max(res, count);
+    } else {
+      --count;
+    }
+  }
+
+  return res;
 }
 namespace test_framework {
 template <>
