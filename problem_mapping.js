@@ -1696,7 +1696,7 @@ problem_mapping = {
         },
         "13.07 Merging intervals": {
             "C++: interval_add.cc": {
-                "passed": 0,
+                "passed": 103,
                 "total": 103
             },
             "Java: IntervalAdd.java": {
@@ -1710,7 +1710,7 @@ problem_mapping = {
         },
         "13.08 Compute the union of intervals": {
             "C++: intervals_union.cc": {
-                "passed": 0,
+                "passed": 191,
                 "total": 191
             },
             "Java: IntervalsUnion.java": {
@@ -1724,7 +1724,7 @@ problem_mapping = {
         },
         "13.09 Partitioning and sorting an array with many repeated entries": {
             "C++: group_equal_entries.cc": {
-                "passed": 0,
+                "passed": 33,
                 "total": 33
             },
             "Java: GroupEqualEntries.java": {
@@ -1738,7 +1738,7 @@ problem_mapping = {
         },
         "13.10 Team photo day---1": {
             "C++: is_array_dominated.cc": {
-                "passed": 0,
+                "passed": 105,
                 "total": 105
             },
             "Java: IsArrayDominated.java": {
@@ -1752,7 +1752,7 @@ problem_mapping = {
         },
         "13.11 Implement a fast sorting algorithm for lists": {
             "C++: sort_list.cc": {
-                "passed": 0,
+                "passed": 209,
                 "total": 209
             },
             "Java: SortList.java": {

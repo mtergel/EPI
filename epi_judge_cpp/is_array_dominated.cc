@@ -15,7 +15,14 @@ class Team {
   }
   // Checks if team0 can be placed in front of team1.
   static bool ValidPlacementExists(const Team& team0, const Team& team1) {
-    // TODO - you fill in here.
+    vector<Player> A(team0.SortByHeight());
+    vector<Player> B(team1.SortByHeight());
+
+    for (int i = 0; i < A.size(); ++i) {
+      if (!(A[i] < B[i])) {
+        return false;
+      }
+    }
     return true;
   }
 
@@ -26,6 +33,12 @@ class Team {
     int height;
   };
   vector<Player> players_;
+
+  vector<Player> SortByHeight() const {
+    vector<Player> res(players_);
+    std::sort(res.begin(), res.end());
+    return res;
+  }
 };
 void ValidPlacementExistsWrapper(TimedExecutor& executor,
                                  const vector<int>& team0,

@@ -3,6 +3,7 @@
 #include "test_framework/generic_test.h"
 #include "test_framework/serialization_traits.h"
 #include "test_framework/timed_executor.h"
+using std::sort;
 using std::vector;
 
 struct Interval {
@@ -11,12 +12,37 @@ struct Interval {
     int val;
   };
 
+  bool operator<(const Interval& that) const {
+    if (left.val != that.left.val) {
+      return left.val < that.left.val;
+    }
+
+    return left.is_closed && !that.left.is_closed;
+  }
+
   Endpoint left, right;
 };
 
 vector<Interval> UnionOfIntervals(vector<Interval> intervals) {
-  // TODO - you fill in here.
-  return {};
+  if (intervals.empty()) return {};
+  sort(intervals.begin(), intervals.end());
+
+  vector<Interval> result;
+  for (Interval i : intervals) {
+    if (!result.empty() &&
+        (i.left.val < result.back().right.val ||
+         (i.left.val == result.back().right.val &&
+          (i.left.is_closed || result.back().right.is_closed)))) {
+      if (i.right.val > result.back().right.val ||
+          (i.right.val == result.back().right.val && i.right.is_closed)) {
+        result.back().right = i.right;
+      }
+    } else {
+      result.emplace_back(i);
+    }
+  }
+
+  return result;
 }
 struct FlatInterval {
   int left_val;

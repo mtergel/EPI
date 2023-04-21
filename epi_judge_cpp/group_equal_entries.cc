@@ -1,6 +1,7 @@
 #include <iterator>
 #include <set>
 #include <string>
+#include <unordered_map>
 #include <vector>
 
 #include "test_framework/generic_test.h"
@@ -8,6 +9,8 @@
 #include "test_framework/test_failure.h"
 #include "test_framework/timed_executor.h"
 using std::string;
+using std::swap;
+using std::unordered_map;
 using std::vector;
 
 struct Person {
@@ -16,7 +19,33 @@ struct Person {
 };
 
 void GroupByAge(vector<Person>* people) {
-  // TODO - you fill in here.
+  unordered_map<int, int> m;  // age <-> count
+  for (const Person& p : *people) {
+    m[p.age]++;
+  }
+
+  unordered_map<int, int> age_to_idx;  // age <-> idx
+  int idx = 0;
+
+  for (const auto& p : m) {
+    age_to_idx[p.first] = idx;
+    idx += p.second;
+  }
+
+  while (!age_to_idx.empty()) {
+    auto from = age_to_idx.begin();
+    auto to = age_to_idx.find((*people)[from->second].age);
+    swap((*people)[from->second], (*people)[to->second]);
+
+    // use m to see when we are finished with a particular age
+    --m[to->first];
+    if (m[to->first] > 0) {
+      ++to->second;
+    } else {
+      age_to_idx.erase(to);
+    }
+  }
+
   return;
 }
 

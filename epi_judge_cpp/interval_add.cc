@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <vector>
 
 #include "test_framework/fmt_print.h"
@@ -11,8 +12,30 @@ struct Interval {
 
 vector<Interval> AddInterval(const vector<Interval>& disjoint_intervals,
                              Interval new_interval) {
-  // TODO - you fill in here.
-  return {};
+  vector<Interval> res;
+  int i = 0, n = disjoint_intervals.size();
+
+  // add untill merge
+  while (i < n && disjoint_intervals[i].right < new_interval.left) {
+    res.push_back(disjoint_intervals[i++]);
+  }
+
+  // merge
+  while (i < n && new_interval.right >= disjoint_intervals[i].left) {
+    new_interval.left = std::min(disjoint_intervals[i].left, new_interval.left);
+    new_interval.right =
+        std::max(disjoint_intervals[i].right, new_interval.right);
+    ++i;
+  }
+
+  res.push_back(new_interval);
+
+  // add rest
+  while (i < n) {
+    res.push_back(disjoint_intervals[i++]);
+  }
+
+  return res;
 }
 namespace test_framework {
 template <>

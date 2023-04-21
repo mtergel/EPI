@@ -1,11 +1,11 @@
 #include <vector>
 
 #include "test_framework/generic_test.h"
+using std::sort;
 using std::vector;
 
 double FindSalaryCap(int target_payroll, vector<int> current_salaries) {
-  // TODO - you fill in here.
-  return 0.0;
+  return -1.0;
 }
 
 int main(int argc, char* argv[]) {
