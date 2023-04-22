@@ -1766,7 +1766,7 @@ problem_mapping = {
         },
         "13.12 Compute a salary threshold": {
             "C++: find_salary_threshold.cc": {
-                "passed": 0,
+                "passed": 1005,
                 "total": 1005
             },
             "Java: FindSalaryThreshold.java": {
