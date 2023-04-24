@@ -1782,7 +1782,7 @@ problem_mapping = {
     "Chapter 14: Binary Search Trees": {
         "14.00 Bootcamp: Binary Search Trees": {
             "C++: search_in_bst.cc": {
-                "passed": 0,
+                "passed": 955,
                 "total": 955
             },
             "Java: SearchInBst.java": {
@@ -1796,7 +1796,7 @@ problem_mapping = {
         },
         "14.01 Test if a binary tree satisfies the BST property": {
             "C++: is_tree_a_bst.cc": {
-                "passed": 0,
+                "passed": 3139,
                 "total": 3139
             },
             "Java: IsTreeABst.java": {
@@ -1810,7 +1810,7 @@ problem_mapping = {
         },
         "14.02 Find the first key greater than a given value in a BST": {
             "C++: search_first_greater_value_in_bst.cc": {
-                "passed": 0,
+                "passed": 949,
                 "total": 949
             },
             "Java: SearchFirstGreaterValueInBst.java": {
@@ -1824,7 +1824,7 @@ problem_mapping = {
         },
         "14.03 Find the k largest elements in a BST": {
             "C++: k_largest_values_in_bst.cc": {
-                "passed": 0,
+                "passed": 949,
                 "total": 949
             },
             "Java: KLargestValuesInBst.java": {
@@ -1838,7 +1838,7 @@ problem_mapping = {
         },
         "14.04 Compute the LCA in a BST": {
             "C++: lowest_common_ancestor_in_bst.cc": {
-                "passed": 0,
+                "passed": 951,
                 "total": 951
             },
             "Java: LowestCommonAncestorInBst.java": {
@@ -1852,7 +1852,7 @@ problem_mapping = {
         },
         "14.05 Reconstruct a BST from traversal data": {
             "C++: bst_from_preorder.cc": {
-                "passed": 0,
+                "passed": 950,
                 "total": 950
             },
             "Java: BstFromPreorder.java": {
@@ -1866,7 +1866,7 @@ problem_mapping = {
         },
         "14.06 Find the closest entries in three sorted arrays": {
             "C++: minimum_distance_3_sorted_arrays.cc": {
-                "passed": 0,
+                "passed": 51,
                 "total": 51
             },
             "Java: MinimumDistance3SortedArrays.java": {
@@ -1880,7 +1880,7 @@ problem_mapping = {
         },
         "14.07 Enumerate extended integers": {
             "C++: a_b_sqrt2.cc": {
-                "passed": 0,
+                "passed": 13,
                 "total": 13
             },
             "Java: ABSqrt2.java": {
@@ -1894,7 +1894,7 @@ problem_mapping = {
         },
         "14.08 Build a minimum height BST from a sorted array": {
             "C++: bst_from_sorted_array.cc": {
-                "passed": 0,
+                "passed": 87,
                 "total": 87
             },
             "Java: BstFromSortedArray.java": {

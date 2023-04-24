@@ -1,12 +1,24 @@
+#include <climits>
 #include <memory>
 
 #include "binary_tree_node.h"
 #include "test_framework/generic_test.h"
 using std::unique_ptr;
 
+bool helper(const unique_ptr<BinaryTreeNode<int>>& node, int minval,
+            int maxval) {
+  if (node == nullptr) return true;
+
+  if (node->data < minval || node->data > maxval) {
+    return false;
+  }
+
+  return helper(node->left, minval, node->data) &&
+         helper(node->right, node->data, maxval);
+}
+
 bool IsBinaryTreeBST(const unique_ptr<BinaryTreeNode<int>>& tree) {
-  // TODO - you fill in here.
-  return true;
+  return helper(tree, INT_MIN, INT_MAX);
 }
 
 int main(int argc, char* argv[]) {
