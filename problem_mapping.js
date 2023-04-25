@@ -1908,7 +1908,7 @@ problem_mapping = {
         },
         "14.09 Test if three BST nodes are totally ordered": {
             "C++: descendant_and_ancestor_in_bst.cc": {
-                "passed": 0,
+                "passed": 958,
                 "total": 958
             },
             "Java: DescendantAndAncestorInBst.java": {
@@ -1922,7 +1922,7 @@ problem_mapping = {
         },
         "14.10 The range lookup problem": {
             "C++: range_lookup_in_bst.cc": {
-                "passed": 0,
+                "passed": 954,
                 "total": 954
             },
             "Java: RangeLookupInBst.java": {
@@ -1936,7 +1936,7 @@ problem_mapping = {
         },
         "14.11 Add credits": {
             "C++: adding_credits.cc": {
-                "passed": 0,
+                "passed": 201,
                 "total": 201
             },
             "Java: AddingCredits.java": {

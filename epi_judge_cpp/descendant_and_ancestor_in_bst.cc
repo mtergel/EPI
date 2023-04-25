@@ -6,12 +6,42 @@
 #include "test_framework/timed_executor.h"
 using std::unique_ptr;
 
+bool SearchTarget(const unique_ptr<BstNode<int>> &from,
+                  const unique_ptr<BstNode<int>> &target) {
+  auto *iter = from.get();
+  while (iter && iter != target.get()) {
+    iter = iter->data > target->data ? iter->left.get() : iter->right.get();
+  }
+
+  return iter == target.get();
+}
+
 bool PairIncludesAncestorAndDescendantOfM(
-    const unique_ptr<BstNode<int>> &possible_anc_or_desc_0,
-    const unique_ptr<BstNode<int>> &possible_anc_or_desc_1,
+    const unique_ptr<BstNode<int>> &node0,
+    const unique_ptr<BstNode<int>> &node1,
     const unique_ptr<BstNode<int>> &middle) {
 
-  return true;
+  auto n0 = node0.get();
+  auto n1 = node1.get();
+
+  while (n0 != node1.get() && n1 != node0.get() && n0 != middle.get() &&
+         n1 != middle.get() && (n0 || n1)) {
+    if (n0) {
+      n0 = n0->data > middle->data ? n0->left.get() : n0->right.get();
+    }
+
+    if (n1) {
+      n1 = n1->data > middle->data ? n1->left.get() : n1->right.get();
+    }
+  }
+
+  if ((n0 != middle.get() && n1 != middle.get()) || n0 == node1.get() ||
+      n1 == node0.get()) {
+    return false;
+  }
+
+  return n0 == middle.get() ? SearchTarget(middle, node1)
+                            : SearchTarget(middle, node0);
 }
 
 bool PairIncludesAncestorAndDescendantOfMWrapper(
