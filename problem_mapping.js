@@ -1952,7 +1952,7 @@ problem_mapping = {
     "Chapter 15: Recursion": {
         "15.00 Bootcamp: Recursion": {
             "C++: euclidean_gcd.cc": {
-                "passed": 0,
+                "passed": 10034,
                 "total": 10034
             },
             "Java: EuclideanGcd.java": {
@@ -1966,7 +1966,7 @@ problem_mapping = {
         },
         "15.01 The Towers of Hanoi problem": {
             "C++: hanoi.cc": {
-                "passed": 0,
+                "passed": 10,
                 "total": 10
             },
             "Java: Hanoi.java": {
@@ -1994,7 +1994,7 @@ problem_mapping = {
         },
         "15.03 Generate all nonattacking placements of n-Queens": {
             "C++: n_queens.cc": {
-                "passed": 0,
+                "passed": 10,
                 "total": 10
             },
             "Java: NQueens.java": {
@@ -2008,7 +2008,7 @@ problem_mapping = {
         },
         "15.04 Generate permutations": {
             "C++: permutations.cc": {
-                "passed": 0,
+                "passed": 8,
                 "total": 8
             },
             "Java: Permutations.java": {
