@@ -2022,7 +2022,7 @@ problem_mapping = {
         },
         "15.05 Generate the power set": {
             "C++: power_set.cc": {
-                "passed": 0,
+                "passed": 15,
                 "total": 15
             },
             "Java: PowerSet.java": {
@@ -2036,7 +2036,7 @@ problem_mapping = {
         },
         "15.06 Generate all subsets of size k": {
             "C++: combinations.cc": {
-                "passed": 0,
+                "passed": 120,
                 "total": 120
             },
             "Java: Combinations.java": {
@@ -2050,7 +2050,7 @@ problem_mapping = {
         },
         "15.07 Generate strings of matched parens": {
             "C++: enumerate_balanced_parentheses.cc": {
-                "passed": 0,
+                "passed": 11,
                 "total": 11
             },
             "Java: EnumerateBalancedParentheses.java": {
