@@ -2064,7 +2064,7 @@ problem_mapping = {
         },
         "15.08 Generate palindromic decompositions": {
             "C++: enumerate_palindromic_decompositions.cc": {
-                "passed": 0,
+                "passed": 522,
                 "total": 522
             },
             "Java: EnumeratePalindromicDecompositions.java": {
@@ -2078,7 +2078,7 @@ problem_mapping = {
         },
         "15.09 Generate binary trees": {
             "C++: enumerate_trees.cc": {
-                "passed": 0,
+                "passed": 10,
                 "total": 10
             },
             "Java: EnumerateTrees.java": {
@@ -2092,7 +2092,7 @@ problem_mapping = {
         },
         "15.10 Implement a Sudoku solver": {
             "C++: sudoku_solve.cc": {
-                "passed": 0,
+                "passed": 400,
                 "total": 400
             },
             "Java: SudokuSolve.java": {
@@ -2106,7 +2106,7 @@ problem_mapping = {
         },
         "15.11 Compute a Gray code": {
             "C++: gray_code.cc": {
-                "passed": 0,
+                "passed": 10,
                 "total": 10
             },
             "Java: GrayCode.java": {
