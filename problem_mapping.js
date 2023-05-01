@@ -2122,7 +2122,7 @@ problem_mapping = {
     "Chapter 16: Dynamic Programming": {
         "16.00 Bootcamp: Dynamic Programming": {
             "C++: fibonacci.cc": {
-                "passed": 0,
+                "passed": 46,
                 "total": 46
             },
             "C++: max_sum_subarray.cc": {
@@ -2148,7 +2148,7 @@ problem_mapping = {
         },
         "16.01 Count the number of score combinations": {
             "C++: number_of_score_combinations.cc": {
-                "passed": 0,
+                "passed": 1003,
                 "total": 1003
             },
             "Java: NumberOfScoreCombinations.java": {
@@ -2162,7 +2162,7 @@ problem_mapping = {
         },
         "16.02 Compute the Levenshtein distance": {
             "C++: levenshtein_distance.cc": {
-                "passed": 0,
+                "passed": 100,
                 "total": 100
             },
             "Java: LevenshteinDistance.java": {
@@ -2176,7 +2176,7 @@ problem_mapping = {
         },
         "16.03 Count the number of ways to traverse a 2D array": {
             "C++: number_of_traversals_matrix.cc": {
-                "passed": 0,
+                "passed": 1775,
                 "total": 1775
             },
             "Java: NumberOfTraversalsMatrix.java": {
