@@ -2190,7 +2190,7 @@ problem_mapping = {
         },
         "16.04 Compute the binomial coefficients": {
             "C++: binomial_coefficients.cc": {
-                "passed": 0,
+                "passed": 5906,
                 "total": 5906
             },
             "Java: BinomialCoefficients.java": {
@@ -2204,7 +2204,7 @@ problem_mapping = {
         },
         "16.05 Search for a sequence in a 2D array": {
             "C++: is_string_in_matrix.cc": {
-                "passed": 0,
+                "passed": 186,
                 "total": 186
             },
             "Java: IsStringInMatrix.java": {
@@ -2218,7 +2218,7 @@ problem_mapping = {
         },
         "16.06 The knapsack problem": {
             "C++: knapsack.cc": {
-                "passed": 0,
+                "passed": 100,
                 "total": 100
             },
             "Java: Knapsack.java": {
@@ -2232,7 +2232,7 @@ problem_mapping = {
         },
         "16.07 Building a search index for domains": {
             "C++: is_string_decomposable_into_words.cc": {
-                "passed": 0,
+                "passed": 41,
                 "total": 41
             },
             "Java: IsStringDecomposableIntoWords.java": {
@@ -2246,7 +2246,7 @@ problem_mapping = {
         },
         "16.08 Find the minimum weight path in a triangle": {
             "C++: minimum_weight_path_in_a_triangle.cc": {
-                "passed": 0,
+                "passed": 101,
                 "total": 101
             },
             "Java: MinimumWeightPathInATriangle.java": {
@@ -2260,7 +2260,7 @@ problem_mapping = {
         },
         "16.09 Pick up coins for maximum gain": {
             "C++: picking_up_coins.cc": {
-                "passed": 0,
+                "passed": 162,
                 "total": 162
             },
             "Java: PickingUpCoins.java": {

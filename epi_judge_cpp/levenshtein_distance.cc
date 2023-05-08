@@ -1,37 +1,65 @@
+#include <algorithm>
 #include <string>
 #include <vector>
 
 #include "test_framework/generic_test.h"
+using std::fill;
 using std::min;
 using std::string;
+using std::swap;
 using std::vector;
 
 int LevenshteinDistance(const string &A, const string &B) {
+  // Space Optimized
+  // Each time we update dp[i][j]
+  // we only need dp[i - 1][j - 1], dp[i][j - 1], dp[i - 1][j]
   int m = A.size(), n = B.size();
-  vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
-
-  // base cases
-  for (int i = 1; i <= m; ++i) {
-    dp[i][0] = i;
-  }
-
+  vector<int> prev(n + 1, 0), curr(n + 1, 0);
   for (int j = 1; j <= n; ++j) {
-    dp[0][j] = j;
+    prev[j] = j;
   }
 
   for (int i = 1; i <= m; ++i) {
+    curr[0] = i;
     for (int j = 1; j <= n; ++j) {
       if (A[i - 1] == B[j - 1]) {
-        dp[i][j] = dp[i - 1][j - 1]; // same letter use prev
+        curr[j] = prev[j - 1];
       } else {
-        // in order
-        // replace, insert, delete
-        dp[i][j] = 1 + min({dp[i - 1][j - 1], dp[i][j - 1], dp[i - 1][j]});
+        curr[j] = 1 + min({prev[j - 1], curr[j - 1], prev[j]});
       }
     }
+
+    fill(prev.begin(), prev.end(), 0);
+    swap(prev, curr);
   }
 
-  return dp[m][n];
+  return prev[n];
+
+  // int m = A.size(), n = B.size();
+  // vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
+  //
+  // // base cases
+  // for (int i = 1; i <= m; ++i) {
+  //   dp[i][0] = i;
+  // }
+  //
+  // for (int j = 1; j <= n; ++j) {
+  //   dp[0][j] = j;
+  // }
+  //
+  // for (int i = 1; i <= m; ++i) {
+  //   for (int j = 1; j <= n; ++j) {
+  //     if (A[i - 1] == B[j - 1]) {
+  //       dp[i][j] = dp[i - 1][j - 1]; // same letter use prev
+  //     } else {
+  //       // in order
+  //       // replace, insert, delete
+  //       dp[i][j] = 1 + min({dp[i - 1][j - 1], dp[i][j - 1], dp[i - 1][j]});
+  //     }
+  //   }
+  // }
+  //
+  // return dp[m][n];
 
   // // variant: longest subseq
   // vector<vector<int>> dp(m + 1, vector<int>(n + 1, 0));
