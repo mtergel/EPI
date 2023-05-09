@@ -2274,7 +2274,7 @@ problem_mapping = {
         },
         "16.10 Count the number of moves to climb stairs": {
             "C++: number_of_traversals_staircase.cc": {
-                "passed": 0,
+                "passed": 546,
                 "total": 546
             },
             "Java: NumberOfTraversalsStaircase.java": {
@@ -2288,7 +2288,7 @@ problem_mapping = {
         },
         "16.11 The pretty printing problem": {
             "C++: pretty_printing.cc": {
-                "passed": 0,
+                "passed": 102,
                 "total": 102
             },
             "Java: PrettyPrinting.java": {
@@ -2302,7 +2302,7 @@ problem_mapping = {
         },
         "16.12 Find the longest nondecreasing subsequence": {
             "C++: longest_nondecreasing_subsequence.cc": {
-                "passed": 0,
+                "passed": 200,
                 "total": 200
             },
             "Java: LongestNondecreasingSubsequence.java": {
