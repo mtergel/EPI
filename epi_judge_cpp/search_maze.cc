@@ -16,11 +16,42 @@ struct Coordinate {
   int x, y;
 };
 
+bool helper(const Coordinate &curr, const Coordinate &e,
+            vector<vector<Color>> *maze, vector<Coordinate> *path) {
+  if (curr == e) {
+    return true;
+  }
+
+  int dirs[4][2] = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
+  for (int k = 0; k < 4; ++k) {
+    Coordinate next{curr.x + dirs[k][0], curr.y + dirs[k][1]};
+    if (next.x < 0 || next.y < 0 || next.x >= maze->size() ||
+        next.y >= (*maze)[next.x].size() ||
+        (*maze)[next.x][next.y] == Color::kBlack) {
+      continue;
+    }
+
+    (*maze)[next.x][next.y] = Color::kBlack;
+    path->push_back(next);
+
+    if (helper(next, e, maze, path)) {
+      return true;
+    }
+
+    path->pop_back();
+  }
+
+  return false;
+}
+
 vector<Coordinate> SearchMaze(vector<vector<Color>> maze, const Coordinate &s,
                               const Coordinate &e) {
+  // not asking for shortest path
+  // so use dfs since its easier to implement
+
   vector<Coordinate> res;
-  maze[s.x][s.y] = Color::kBlack;
-  res.emplace_back(s);
+  maze[s.x][s.y] = Color::kBlack; // visit
+  res.push_back(s);
 
   if (!helper(s, e, &maze, &res)) {
     res.pop_back();
