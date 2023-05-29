@@ -19,10 +19,13 @@ int FindMinimumVisits(vector<Interval> intervals) {
   sort(intervals.begin(), intervals.end(),
        [](const Interval &a, const Interval &b) { return a.right < b.right; });
 
-  int last_visit_time = INT_MIN, res = 0;
+  int curr_ending = INT_MIN;
+  int res = 0;
+
   for (const Interval &i : intervals) {
-    if (i.left > last_visit_time) {
-      last_visit_time = i.right;
+    // previous interval ended must check now
+    if (i.left > curr_ending) {
+      curr_ending = i.right;
       ++res;
     }
   }

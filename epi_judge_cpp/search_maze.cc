@@ -9,43 +9,50 @@
 using std::vector;
 enum class Color { kWhite, kBlack };
 struct Coordinate {
-  bool operator==(const Coordinate& that) const {
+  bool operator==(const Coordinate &that) const {
     return x == that.x && y == that.y;
   }
 
   int x, y;
 };
-vector<Coordinate> SearchMaze(vector<vector<Color>> maze, const Coordinate& s,
-                              const Coordinate& e) {
-  // TODO - you fill in here.
-  return {};
+
+vector<Coordinate> SearchMaze(vector<vector<Color>> maze, const Coordinate &s,
+                              const Coordinate &e) {
+  vector<Coordinate> res;
+  maze[s.x][s.y] = Color::kBlack;
+  res.emplace_back(s);
+
+  if (!helper(s, e, &maze, &res)) {
+    res.pop_back();
+  }
+
+  return res;
 }
 
 namespace test_framework {
-template <>
-struct SerializationTrait<Color> : SerializationTrait<int> {
+template <> struct SerializationTrait<Color> : SerializationTrait<int> {
   using serialization_type = Color;
 
-  static serialization_type Parse(const json& json_object) {
+  static serialization_type Parse(const json &json_object) {
     return static_cast<serialization_type>(
         SerializationTrait<int>::Parse(json_object));
   }
 };
-}  // namespace test_framework
+} // namespace test_framework
 
 namespace test_framework {
 template <>
 struct SerializationTrait<Coordinate> : UserSerTrait<Coordinate, int, int> {
-  static std::vector<std::string> GetMetricNames(const std::string& arg_name) {
+  static std::vector<std::string> GetMetricNames(const std::string &arg_name) {
     return {};
   }
 
-  static std::vector<int> GetMetrics(const Coordinate& x) { return {}; }
+  static std::vector<int> GetMetrics(const Coordinate &x) { return {}; }
 };
-}  // namespace test_framework
+} // namespace test_framework
 
-bool PathElementIsFeasible(const vector<vector<Color>>& maze,
-                           const Coordinate& prev, const Coordinate& cur) {
+bool PathElementIsFeasible(const vector<vector<Color>> &maze,
+                           const Coordinate &prev, const Coordinate &cur) {
   if (!(0 <= cur.x && cur.x < maze.size() && 0 <= cur.y &&
         cur.y < maze[cur.x].size() && maze[cur.x][cur.y] == Color::kWhite)) {
     return false;
@@ -56,9 +63,9 @@ bool PathElementIsFeasible(const vector<vector<Color>>& maze,
          cur == Coordinate{prev.x, prev.y - 1};
 }
 
-bool SearchMazeWrapper(TimedExecutor& executor,
-                       const vector<vector<Color>>& maze, const Coordinate& s,
-                       const Coordinate& e) {
+bool SearchMazeWrapper(TimedExecutor &executor,
+                       const vector<vector<Color>> &maze, const Coordinate &s,
+                       const Coordinate &e) {
   vector<vector<Color>> copy = maze;
 
   auto path = executor.Run([&] { return SearchMaze(copy, s, e); });
@@ -80,7 +87,7 @@ bool SearchMazeWrapper(TimedExecutor& executor,
   return true;
 }
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
   std::vector<std::string> args{argv + 1, argv + argc};
   std::vector<std::string> param_names{"executor", "maze", "s", "e"};
   return GenericTestMain(args, "search_maze.cc", "search_maze.tsv",

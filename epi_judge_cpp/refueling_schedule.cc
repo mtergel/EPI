@@ -9,12 +9,35 @@ const int kMPG = 20;
 
 // gallons[i] is the amount of gas in city i, and distances[i] is the distance
 // city i to the next city.
-int FindAmpleCity(const vector<int>& gallons, const vector<int>& distances) {
-  // TODO - you fill in here.
-  return 0;
+int FindAmpleCity(const vector<int> &gallons, const vector<int> &distances) {
+  int n = gallons.size();
+  int totalGallons = 0;
+  int totalDist = 0;
+
+  for (int i = 0; i < n; ++i) {
+    totalGallons += gallons[i];
+    totalDist += distances[i];
+  }
+
+  if (totalGallons * kMPG < totalDist) {
+    return -1;
+  }
+
+  int total = 0;
+  int res = 0;
+
+  for (int i = 0; i < n; ++i) {
+    total += gallons[i] * kMPG - distances[i];
+    if (total < 0) {
+      total = 0;
+      res = i + 1;
+    }
+  }
+
+  return res;
 }
-void FindAmpleCityWrapper(TimedExecutor& executor, const vector<int>& gallons,
-                          const vector<int>& distances) {
+void FindAmpleCityWrapper(TimedExecutor &executor, const vector<int> &gallons,
+                          const vector<int> &distances) {
   int result = executor.Run([&] { return FindAmpleCity(gallons, distances); });
   const int num_cities = gallons.size();
   int tank = 0;
@@ -27,7 +50,7 @@ void FindAmpleCityWrapper(TimedExecutor& executor, const vector<int>& gallons,
   }
 }
 
-int main(int argc, char* argv[]) {
+int main(int argc, char *argv[]) {
   std::vector<std::string> args{argv + 1, argv + argc};
   std::vector<std::string> param_names{"executor", "gallons", "distances"};
   return GenericTestMain(args, "refueling_schedule.cc",
